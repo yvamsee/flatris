@@ -36,7 +36,7 @@ export function addRoutes(app: express$Application<>) {
       res.sendStatus(500);
     }
   });
-
+  // This is test
   app.get(
     '/daily-stats',
     async (req: express$Request, res: express$Response) => {
@@ -47,7 +47,7 @@ export function addRoutes(app: express$Application<>) {
       } catch (err) {
         res.sendStatus(500);
       }
-    }
+    },
   );
 
   app.get('/game/:gameId', (req: express$Request, res: express$Response) => {
@@ -195,7 +195,7 @@ function getBackfillRes(req: BackfillRequest): BackfillResponse {
   const actions = gameActions[gameId].filter(action => {
     const player = find(
       players,
-      ({ userId }) => userId === action.payload.userId
+      ({ userId }) => userId === action.payload.userId,
     );
 
     return (
